@@ -4,13 +4,12 @@ import json
 import csv
 
 
-with open('../data/schacon.repos.json', 'r') as file:
+with open('../../data/schacon.repos.json', 'r') as file:
     data = json.load(file)
 
 with open('chacon.csv', "w", newline="") as csvfile:
     csv_writer = csv.writer(csvfile)
 
-    csv_writer.writerow(["name", "html_url", "updated_at", "visibility"])
     
     for i, item in enumerate(data[:5]):  
         csv_writer.writerow([
